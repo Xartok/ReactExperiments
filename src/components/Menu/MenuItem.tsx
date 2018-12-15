@@ -7,14 +7,25 @@ export interface IMenuItemProps {
   onItemClicked?: (activatedItemIndex: number) => void;
 }
 
-export class MenuItem extends React.Component<IMenuItemProps, object> {
+export class MenuItem extends React.PureComponent<IMenuItemProps, object> {
   public render(): React.ReactNode {
     return (
       <span
-        className={this.props.isActive ? "active" : ""}
-        onClick={this.props.onItemClicked!.bind(this, this.props.index!)}>
+        className={this.renderClassName()}
+        onClick={this.onItemClicked}>
         {this.props.children}
       </span>
     );
+  }
+
+  private renderClassName = () => {
+    const defaultValue = "menu-item";
+    const rest = this.props.isActive ? "active" : "";
+
+    return `${defaultValue} ${rest}`;
+  }
+
+  private onItemClicked = () => {
+    this.props.onItemClicked!(this.props.index!);
   }
 }
