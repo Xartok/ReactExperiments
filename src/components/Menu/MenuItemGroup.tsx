@@ -1,6 +1,7 @@
 import * as React from "react";
-import {Children, cloneElement, Component, Fragment, ReactChild, ReactElement, ReactNode} from "react";
+import {Children, cloneElement, Component, ReactChild, ReactElement, ReactNode} from "react";
 import {IMenuItemProps} from "./MenuItem";
+import "./MenuItemGroup.css";
 
 interface IMenuGroupProps {
   children: ReactChild[];
@@ -10,7 +11,7 @@ interface IMenuGroupState {
   activeIndex: number;
 }
 
-export class MenuGroup extends Component<IMenuGroupProps, IMenuGroupState> {
+export class MenuItemGroup extends Component<IMenuGroupProps, IMenuGroupState> {
   constructor(props: IMenuGroupProps) {
     super(props);
     this.state = {
@@ -20,9 +21,9 @@ export class MenuGroup extends Component<IMenuGroupProps, IMenuGroupState> {
 
   public render(): ReactNode {
     return (
-      <Fragment>
+      <div className={"menu-item-group"}>
         {this.renderChildren()}
-      </Fragment>
+      </div>
     );
   }
 

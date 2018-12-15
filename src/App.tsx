@@ -1,26 +1,33 @@
-import * as React from 'react';
-import './App.css';
-import {MenuGroup} from "./components/Menu/MenuGroup";
+import * as React from "react";
+import "./App.css";
 import {MenuItem} from "./components/Menu/MenuItem";
+import {MenuItemGroup} from "./components/Menu/MenuItemGroup";
 
 class App extends React.Component {
   public render() {
     return (
       <div className="App">
-        <header>
+        <header id={"header"}>
           Header
         </header>
         <section id={"menu"}>
-          <MenuGroup>
+          <MenuItemGroup>
             <MenuItem>Item 1</MenuItem>
             <MenuItem>Item 2</MenuItem>
             <MenuItem>Item 3</MenuItem>
-          </MenuGroup>
+            <MenuItem>Item 4</MenuItem>
+            <MenuItem>Item 5</MenuItem>
+            <MenuItem>Item 6</MenuItem>
+            <MenuItem>Item 7</MenuItem>
+            <MenuItem>Item 8</MenuItem>
+            <MenuItem>Item 9</MenuItem>
+            <MenuItem>Item 10</MenuItem>
+          </MenuItemGroup>
         </section>
-        <main>
+        <main id={"content"}>
           Content
         </main>
-        <footer>
+        <footer id={"footer"}>
           Footer
         </footer>
       </div>
