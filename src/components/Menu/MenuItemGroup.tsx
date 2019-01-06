@@ -4,7 +4,7 @@ import {IMenuItemProps} from "./MenuItem";
 import "./MenuItemGroup.css";
 
 interface IMenuGroupProps {
-  children: ReactChild[];
+  children: Array<(ReactChild | boolean)>;
 }
 
 interface IMenuGroupState {
@@ -28,7 +28,9 @@ export class MenuItemGroup extends Component<IMenuGroupProps, IMenuGroupState> {
   }
 
   private renderChildren() {
-    return Children.map(this.props.children, (child, index) => (
+    const children = Children.toArray(this.props.children).filter(Boolean);
+
+    return Children.map(children, (child, index) => (
       cloneElement(child as ReactElement<IMenuItemProps>, {
         index,
         isActive: this.state.activeIndex === index,

@@ -3,6 +3,8 @@ import "./App.css";
 import {MenuItem} from "./components/Menu/MenuItem";
 import {MenuItemGroup} from "./components/Menu/MenuItemGroup";
 
+const flag = false;
+
 class App extends React.Component {
   public render() {
     return (
@@ -21,7 +23,9 @@ class App extends React.Component {
             <MenuItem>Item 7</MenuItem>
             <MenuItem>Item 8</MenuItem>
             <MenuItem>Item 9</MenuItem>
-            <MenuItem>Item 10</MenuItem>
+            {
+              flag && <MenuItem>Item 10</MenuItem>
+            }
           </MenuItemGroup>
         </section>
         <main id={"content"}>

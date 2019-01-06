@@ -3,7 +3,7 @@
 }
 
 .menu-item.active {
-	color: rebeccapurple;
+	color: white;
 }
 
 .menu-item:not(.active) {
