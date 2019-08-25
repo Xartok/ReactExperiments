@@ -1,9 +1,8 @@
-import * as React from "react";
-import {Children, cloneElement, Component} from "react";
+import React, {Children, cloneElement, PureComponent} from "react";
 
 import "./MenuItemGroup.css";
 
-export class MenuItemGroup extends Component {
+export class MenuItemGroup extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

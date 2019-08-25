@@ -1,7 +1,8 @@
-import * as React from "react";
+import React, {PureComponent} from "react";
+
 import "./MenuItem.css";
 
-export class MenuItem extends React.PureComponent {
+export class MenuItem extends PureComponent {
   render() {
     return (
       <span
