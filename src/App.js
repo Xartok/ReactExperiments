@@ -1,12 +1,14 @@
 import * as React from "react";
-import "./App.css";
+
 import {MenuItem} from "./components/Menu/MenuItem";
 import {MenuItemGroup} from "./components/Menu/MenuItemGroup";
+
+import "./App.css";
 
 const flag = false;
 
 class App extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="App">
         <header id={"header"}>
